@@ -20,6 +20,8 @@ Or install it yourself as:
 
 TODO: Write usage instructions here
 
+* ヒント: 安全に利用するため閲覧権限の API キーを利用することが推奨です
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/nchosts/fork )
