@@ -1,0 +1,3 @@
+<% instances.each do |instance| %>
+alias <%= instance['instanceId'] %><% instance['account']['suffix'] %>="ssh <%= instance['ipAddress'] %>"
+<% end %>

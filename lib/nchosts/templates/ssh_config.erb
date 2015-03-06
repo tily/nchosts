@@ -1,0 +1,4 @@
+<% instances.each do |instance| %>
+Host <%= instance['instanceId'] %><%= instance['account']['suffix'] %>
+	Hostname <%= instance['ipAddress'] %>	
+<% end %>
