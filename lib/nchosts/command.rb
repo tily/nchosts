@@ -23,7 +23,6 @@ module Nchosts
 					client.instances.each do |instance|
 						instance['region'] = region
 						instance['account'] = account
-						p instance
 						instances << instance
 					end
 				end
