@@ -25,4 +25,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "ace-client"
   spec.add_dependency "ace-client-ext"
   spec.add_dependency "builder"
+  spec.add_dependency "json"
+  spec.add_dependency "erubis"
 end
