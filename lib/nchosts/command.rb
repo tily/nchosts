@@ -34,10 +34,17 @@ module Nchosts
 		option :format, :aliases => :f # hosts, capistrano, ssh_config
 		option :include # host name regexp
 		option :exclude # host name regexp
+		option :format, :aliases => :f
 		option :template, :aliases => :t
 		option :input_path, :aliases => :i
 		def generate
-			template = template(options[:template])
+			if options[:format]
+				template = template(options[:format])
+			elsif options[:template]
+				template = File.read(options[:template])
+			else
+				abort "Please specify :format or :template"
+			end
 			instances = JSON.parse File.read options[:input_path]
 			puts Erubis::Eruby.new(template).result(:instances => instances)
 		end
