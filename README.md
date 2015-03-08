@@ -9,18 +9,20 @@
 (安全に利用するため閲覧権限のみ付与した API キーを利用しましょう。)
 
 	$ cat accounts.json
-	[
-	  {
-            "nifty_id": "ABC00001.readonly",
-	    "access_key_id": "LLLLLLLLLLLLLLLLLLLL",
-	    "secret_access_key": "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM",
-	  },
-	  {
-            "nifty_id": "ABC00002.readonly",
-	    "access_key_id": "NNNNNNNNNNNNNNNNNNNN",
-	    "secret_access_key": "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO",
-	  }
-	]
+	{
+	   "accounts": [
+	    {
+	      "nifty_id": "ABC00001.readonly",
+	      "access_key_id": "LLLLLLLLLLLLLLLLLLLL",
+	      "secret_access_key": "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM",
+	    },
+	    {
+	      "nifty_id": "ABC00002.readonly",
+	      "access_key_id": "NNNNNNNNNNNNNNNNNNNN",
+	      "secret_access_key": "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO",
+	    }
+	  ]
+	}
 
 上記 `accounts.json` を引数に `nchosts collect` コマンドを実行します。
 
