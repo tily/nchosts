@@ -35,7 +35,7 @@
 
 	$ nchosts generate -i instances.json -f hosts >> /etc/hosts
 	$ nchosts generate -i instances.json -f ssh_config >> ~/.ssh/config
-	$ nchosts generate -i instances.json -f aliases >> ~/.ssh/config
+	$ nchosts generate -i instances.json -f aliases >> ~/.bashrc
 
 自分で書いた erubis 形式のテンプレートファイルを利用することもできます。
 テンプレートの中では `instances` というローカル変数 (配列) でサーバー情報の一覧を参照できます。
