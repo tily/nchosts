@@ -12,19 +12,11 @@ module Nchosts
 			instances = []
 			json = JSON.parse File.read(options[:config])
 			json['accounts'].each do |account|
-				client = AceClient::Niftycloud::Computing.build_client(
-					endpoint: 'cp.cloud.nifty.com',
-					path: '/api',
-					access_key_id: account['access_key_id'],
-					secret_access_key: account['secret_access_key']
-				)
-				client.regions.each do |region|
-					client.endpoint = region['regionEndpoint']
-					client.instances.each do |instance|
-						instance['region'] = region
-						instance['account'] = account
-						instances << instance
-					end
+				collector = Nchosts::Collector.new(account)
+				collector.collect do |region, instance|
+					instance['region'] = region
+					instance['account'] = account
+					instances << instance
 				end
 			end
 			File.write options[:output_path], instances.to_json

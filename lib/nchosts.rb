@@ -6,6 +6,7 @@ require "erubis"
 
 require "nchosts/version"
 require "nchosts/command"
+require "nchosts/collector"
 
 module Nchosts
   # Your code goes here...
