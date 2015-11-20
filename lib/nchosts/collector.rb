@@ -5,7 +5,7 @@ module Nchosts
 		def initialize(account)
 			@client = AceClient::Niftycloud::Computing.build_client(
 				endpoint: 'cp.cloud.nifty.com',
-				path: '/api',
+				path: '/api/',
 				access_key_id: account['access_key_id'],
 				secret_access_key: account['secret_access_key']
 			)
